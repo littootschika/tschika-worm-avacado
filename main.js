@@ -18,3 +18,9 @@ function induceRageUnfairly() {
   let element = document.getElementById('vssection');
   element.appendChild(unlucky);
   };
+// the stuff that the player chooses
+const p1Image = document.getElementById('P1');
+  
+function chooseTschika() {
+  p1Image.setAttribute('src','docs/assets/tschika p1.png');
+};
