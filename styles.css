@@ -1,4 +1,7 @@
-aside,
+aside {
+text-align: center;
+};
 img {
 text-align: center;
+height: 30%;
 }
