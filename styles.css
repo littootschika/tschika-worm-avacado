@@ -3,9 +3,9 @@ text-align: center;
 };
 img {
 text-align: center;
-  border: 5px solid;
-  border-image: linear-gradient(-135deg, rgb(171, 12, 0), rgb(255, 126, 0), rgb(255, 222, 0), rgb(255, 255, 0));
-  border-image-slice: 5;
-  height: 100px;
-  width: 150px;
+border: 5px solid;
+border-image: linear-gradient(-135deg, rgb(171, 12, 0), rgb(255, 126, 0), rgb(255, 222, 0), rgb(255, 255, 0));
+border-image-slice: 5;
+height: 100px;
+width: 150px;
 }
