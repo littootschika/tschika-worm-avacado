@@ -1,6 +1,7 @@
 function NPC() {
     const images = [
         "docs/assets/tschika p2.png",
+        "docs/assets/worm p1.png",
     ];
     var randomIndex = Math.floor(Math.random() * images.length) +1;
     var selectedImage = images[randomIndex];
