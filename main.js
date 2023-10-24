@@ -1,7 +1,8 @@
 function NPC() {
     const images = [
-        "C:\Users\Super\OneDrive\Documents\pogramming\tschika worm avacado\tschika p2.png",
-        "C:\Users\Super\OneDrive\Documents\pogramming\tschika worm avacado\worm p2.png",
+        "docs/assets/tschika p2.png",
+        "docs/assets/worm p2.png",
+        "docs/assets/avacado dragon p2.png",
     ];
     var randomIndex = Math.floor(Math.random() * images.length) +1;
     var selectedImage = images[randomIndex];
@@ -10,7 +11,7 @@ function NPC() {
 
 function ChangeBackground() {
     const images = [
-        "C:\Users\Super\OneDrive\Documents\pogramming\tschika worm avacado\turtle head and worm body soup.png",
+        "docs/assets/turtle head and worm body soup.png",
     ];
     var randomIndex = Math.floor(Math.random() * images.length) +1;
     var selectedImage = images[randomIndex];
