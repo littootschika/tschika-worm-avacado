@@ -5,7 +5,7 @@ function NPC() {
     ];
     var randomIndex = Math.floor(Math.random() * images.length) +1;
     var selectedImage = images[randomIndex];
-    document.getElementByID('P2').style.backgroundImage = "url('" + selectedImage + "')";
+    document.getElementByID('P2').src = selectedImage;
     };
 
 function ChangeBackground() {
