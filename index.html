@@ -2,8 +2,9 @@
 <html>
 <head>
 <title>TSCHIKA WORM AVACADO</title>
+<script src="main.js"></script>
 <link rel="stylesheet" href="styles.css">
-<link rel="icon" href="docs/assets/tschika 16by16 icon.png" type="image/x-icon">
+<link rel="icon" href="C:\Users\Super\OneDrive\Documents\pogramming\tschika worm avacado\tschika 16by16 icon.png" type="image/x-icon">
 <aside>
 <h1>TSCHIKA WORM AVACADO!</h1>
 <h2>the chickeny-iest version of paper scissors rock</h2>
@@ -12,36 +13,24 @@
 </h3>
 </aside>
 </head>
-<body id="body">
+<body id="body" onload="ChangeBackground()">
+<main>
 <section id="vssection">
-<img id="P1" style="height: 150px;" src="docs/assets/error message.png">
-<img id="P2" style="height: 150px;" src="docs/assets/error message.png">
+<p id="scorecounter">Winstreak: 0</p>
+<img id="P1" src="C:\Users\Super\OneDrive\Documents\pogramming\tschika worm avacado\error message.png">
+<img id="P2" src="C:\Users\Super\OneDrive\Documents\pogramming\tschika worm avacado\error message.png">
 </section>
-<button type="button" onclick="document.getElementById('P1').src='docs/assets/tschika p1.png'">Choose Tschika?</button>
-<button type="button" onclick="document.getElementById('P1').src='docs/assets/worm p1.png'">Choose Worm?</button>
-<button type="button" onclick="document.getElementById('P1').src='docs/assets/avacado dragon p1.png'">Choose Avacado?</button>
+<button class="choosebutton" type="button" onclick="document.getElementById('P1').src='C:\\Users\\Super\\OneDrive\\Documents\\pogramming\\tschika worm avacado\\tschika p1.png'">Choose Tschika?</button>
+<button class="choosebutton" type="button" onclick="document.getElementById('P1').src='C:\\Users\\Super\\OneDrive\\Documents\\pogramming\\tschika worm avacado\\worm p1.png'">Choose Worm?</button>
+<button class="choosebutton" type="button" onclick="document.getElementById('P1').src='C:\\Users\\Super\\OneDrive\\Documents\\pogramming\\tschika worm avacado\\avacado dragon p1.png'">Choose Avacado?</button>
 <br>
-<div style="
-background: linear-gradient(135deg, rgb(171, 12, 0), rgb(255, 126, 0), rgb(255, 222, 0), rgb(149, 246, 255));
-width: 100px;
-border-radius: 5px;
-padding-top: 4px;
-padding-bottom: 4px;
-float: right;
-margin-right: 493px;"
->
-<button type="button" style="
-padding: 5px;
-border-radius: 5px;
-border: 5px solid transparent;
-font-family: 'Playpen Sans', cursive;
-font-size: 20px;
-text-align: center;
-;">
+<div id="startbuttonwrapper">
+<button id="startbutton" type="button" onclick="Bot(), score()">
 Start?</button>
 <script src="main.js"></script>
 </div>
 </br>
+</main>
 </body>
 </button>
 </html>
