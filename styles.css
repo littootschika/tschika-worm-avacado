@@ -1,12 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@500&display=swap');
 body {
     text-align: center;
-};
-
-aside {
-    text-align: center;
-};
-
+}
+h1 {
+    font-size: 36;
+}
 img{
     height: 150px;
-};
+}
+p{
+    float: left;
+}
+#startbuttonwrapper {
+    background: linear-gradient(135deg, rgba(171, 12, 0, 50), rgb(255, 126, 0), rgb(255, 222, 0), rgb(149, 246, 255), rgba(255, 11, 76, 0.625));
+    background-size: 400% 400%;
+    animation: movingbackgroundforstart 5s ease infinite;
+    width: 100px;
+    border-radius: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    float: right;
+    margin-right: 493px;
+}
+#startbutton {
+    padding: 5px;
+    border-radius: 5px;
+    border: 0px solid transparent;
+    font-family: 'Playpen Sans', cursive;
+    font-size: 20px;
+    text-align: center;
+    background: transparent;
+}
+.choosebutton {
+    background: linear-gradient(150deg,rgb(171, 12, 0), rgb(255, 126, 0), rgb(255, 222, 0), rgb(0, 200, 0), rgb(0, 0, 200), rgb(159,78, 220), rgb(255, 0, 255));
+    background-size: 800%;
+    animation: buttonbg 5s linear infinite;
+    font-family: 'Playpen Sans', cursive;
+    color: white;
+    font-size: 13px;
+    border-radius: 3px;
+}
+/*keyframe*/
+@keyframes movingbackgroundforstart {
+    0% {
+        background-position: 30% 100%;
+    }
+    50% {
+        background-position: 230% 140%;
+    }
+    100% {
+        background-position: 30% 100%;
+    }
+}
+@keyframes buttonbg {
+    0% {
+        background-position: 0% 100%;
+    }
+    33.3% {
+        background-position: 200% 100%;
+    }
+    66.6% {
+        background-position: 400% 200%;
+    }
+    100% {
+        background-position: 800% 400%;
+    }
+}
