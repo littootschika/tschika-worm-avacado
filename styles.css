@@ -9,7 +9,7 @@ img{
     height: 150px;
 }
 p{
-    float: left;
+    float: center;
 }
 #startbuttonwrapper {
     background: linear-gradient(135deg, rgba(171, 12, 0, 50), rgb(255, 126, 0), rgb(255, 222, 0), rgb(149, 246, 255), rgba(255, 11, 76, 0.625));
