@@ -23,7 +23,7 @@ function score() {
     let n = 0;
     let message = document.createElement('p');
     message.setAttribute('id', 'msg');
-// check if P1 is tschika and it's outcomes
+    // check if P1 is tschika and it's outcomes
     if (document.getElementById('P1').src == "docs/assets/tschika p1.png") {
         if (document.getElementById('P2').src == "docs/assets/worm p2.png") {
             let n = n+1;
