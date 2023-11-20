@@ -1,7 +1,7 @@
 // changing the background
 function ChangeBackground() {
     const bgImages = [
-        "C:\\Users\\Super\\OneDrive\\Documents\\pogramming\\tschika worm avacado\\turtle head and worm body soup.png",
+        "docs/assets/turtle head and worm body soup.png",
     ];
     const randomBgImage = Math.floor(Math.random() * bgImages.length);
     const selectedBgImage = bgImages[randomBgImage];
@@ -10,9 +10,9 @@ function ChangeBackground() {
 // making the P2 randomly choose something
 function Bot() {
     const images = [
-        "C:\\Users\\Super\\OneDrive\\Documents\\pogramming\\tschika worm avacado\\tschika p2.png",
-        "C:\\Users\\Super\\OneDrive\\Documents\\pogramming\\tschika worm avacado\\worm p2.png",
-        "C:\\Users\\Super\\OneDrive\\Documents\\pogramming\\tschika worm avacado\\avacado dragon p2.png",
+        "docs/assets/tschika p2.png",
+        "docs/assets/worm p2.png",
+        "docs/assets/avacado dragon p2.png",
     ];
     const randomImage = Math.floor(Math.random() * images.length);
     const selectedImage = images[randomImage];
@@ -24,46 +24,45 @@ function score() {
     let message = document.createElement('p');
     message.setAttribute('id', 'msg');
 // check if P1 is tschika and it's outcomes
-    if (document.getElementById('P1').src == "C:\\Users\\Super\\OneDrive\\Documents\\pogramming\\tschika worm avacado\\tschika p2.png") {
-        if (document.getElementById('P2').src == "C:\\Users\\Super\\OneDrive\\Documents\\pogramming\\tschika worm avacado\\worm p2.png") {
+    if (document.getElementById('P1').src == "docs/assets/tschika p1.png") {
+        if (document.getElementById('P2').src == "docs/assets/worm p2.png") {
             let n = n+1;
             document.getElementById('msg').innerHTML('Tschika is victorious!!!');
             document.getElementById('scorecounter').innerHTML('Score:' + n.toString());
-        } else if (document.getElementById('P2').src == "C:\\Users\\Super\\OneDrive\\Documents\\pogramming\\tschika worm avacado\\avacado dragon p2.png") {
+        } else if (document.getElementById('P2').src == "docs/assets/avacado dragon p2.png") {
             let n = n-1;
             document.getElementById('msg').innerHTML('NOOOO! LITTOO TSCHIKA HAD A FAMILY TOO FEED!');
             document.getElementById('scorecounter').innerHTML('Score:' + n.toString());
         } else {
-            let n = n;
             document.getElementById('msg').innerHTML('You drawed. Is it a 2 of clubs?');
             document.getElementById('scorecounter').innerHTML('Score:' + n.toString());
         }
     }
     // check if P1 is worm
-    else if (document.getElementById('P1').src == "C:\\Users\\Super\\OneDrive\\Documents\\pogramming\\tschika worm avacado\\worm p2.png") {
-        if (document.getElementById('P2').src == "C:\\Users\\Super\\OneDrive\\Documents\\pogramming\\tschika worm avacado\\avacado dragon p2.png") {
+    else if (document.getElementById('P1').src == "docs/assets/worm p1.png") {
+        if (document.getElementById('P2').src == "docs/assets/avacado dragon p2.png") {
             let n = n+1;
             document.getElementById('msg').innerHTML('Worm is victorious!!!');
             document.getElementById('scorecounter').innerHTML('Score:' + n.toString());
-        } else if (document.getElementById('P2').src == "C:\\Users\\Super\\OneDrive\\Documents\\pogramming\\tschika worm avacado\\tschika p2.png") {
+        } else if (document.getElementById('P2').src == "docs/assets/tschika p2.png") {
             let n = n-1;
-            document.getElementById('msg').innerHTML('You hear voices- "Traditional chickenese spaghetti is served with worm noodles- UWU!"');
+            document.getElementById('msg').innerHTML('You hear voices- "Hayoo everyone! Today we\'ll be cooking... Traditional chickenese spaghetti served with worm noodles!"');
             document.getElementById('scorecounter').innerHTML('Score:' + n.toString());
         } else {
             let n = n;
-            document.getElementById('msg').innerHTML('WORM PARTY!!! ');
+            document.getElementById('msg').innerHTML('Both of us worms have been living in and under rocks');
             document.getElementById('scorecounter').innerHTML('Score:' + n.toString());
         }
     }
     //check if P1 is avacado dragon
-    else if (document.getElementById('P1').src == "C:\\Users\\Super\\OneDrive\\Documents\\pogramming\\tschika worm avacado\\avacado dragon p2.png") {
-        if (document.getElementById('P2').src == "C:\\Users\\Super\\OneDrive\\Documents\\pogramming\\tschika worm avacado\\tschika p2.png") {
+    else if (document.getElementById('P1').src == "docs/assets/avacado dragon p1.png") {
+        if (document.getElementById('P2').src == "docs/assets/tschika p2.png") {
             let n = n+1;
             document.getElementById('msg').innerHTML('Avacado is victorious!!!');
             document.getElementById('scorecounter').innerHTML('Score:' + n.toString());
-        } else if (document.getElementById('P2').src == "C:\\Users\\Super\\OneDrive\\Documents\\pogramming\\tschika worm avacado\\worm p2.png") {
+        } else if (document.getElementById('P2').src == "docs/assets/worm p2.png") {
             let n = n-1;
-            document.getElementById('msg').innerHTML('I wonder if worms are herbivores or omnivores... I also wonder if I\'m meat or vegetable... I wondeer if- *Silence- the worm has eaten the avacado\'s mouth off*');
+            document.getElementById('msg').innerHTML('I wonder if worms are herbivores or omnivores... I also wonder if I\'m meat or vegetable... I wondeer if- *Silence- the worm has eaten the avacado\'s mouth off. It was made of both meat and vegetables*');
             document.getElementById('scorecounter').innerHTML('Score:' + n.toString());
         } else {
             let n = n;
