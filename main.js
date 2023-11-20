@@ -7,7 +7,7 @@ function ChangeBackground() {
     const selectedBgImage = bgImages[randomBgImage];
     document.getElementById('body').style.selectedBgImage = "url('" + selectedBgImage + "')";
 };
-// making the P2 randomly choose something
+// making the P2 randomly choose something //
 function Bot() {
     const images = [
         "docs/assets/tschika p2.png",
@@ -18,12 +18,12 @@ function Bot() {
     const selectedImage = images[randomImage];
     document.getElementById('P2').src = selectedImage;
 };
-//making the score up and down and also the outcomes when game start and stuff
+//making the score up and down and also the outcomes when game start and stuff //
 function score() {
     let n = 0;
     let message = document.createElement('p');
     message.setAttribute('id', 'msg');
-    // check if P1 is tschika and it's outcomes
+    // check if P1 is tschika and it's outcomes //
     if (document.getElementById('P1').src == "docs/assets/tschika p1.png") {
         if (document.getElementById('P2').src == "docs/assets/worm p2.png") {
             let n = n+1;
@@ -38,7 +38,7 @@ function score() {
             document.getElementById('scorecounter').innerHTML('Score:' + n.toString());
         }
     }
-    // check if P1 is worm
+    // check if P1 is worm //
     else if (document.getElementById('P1').src == "docs/assets/worm p1.png") {
         if (document.getElementById('P2').src == "docs/assets/avacado dragon p2.png") {
             let n = n+1;
@@ -54,7 +54,7 @@ function score() {
             document.getElementById('scorecounter').innerHTML('Score:' + n.toString());
         }
     }
-    //check if P1 is avacado dragon
+    //check if P1 is avacado dragon //
     else if (document.getElementById('P1').src == "docs/assets/avacado dragon p1.png") {
         if (document.getElementById('P2').src == "docs/assets/tschika p2.png") {
             let n = n+1;
