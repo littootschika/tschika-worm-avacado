@@ -2,32 +2,38 @@
 <html>
 <head>
 <title>TSCHIKA WORM AVACADO</title>
-<script src="main.js"></script>
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" href="docs/assets/tschika 16by16 icon.png" type="image/x-icon">
 </head>
-<body id="body" onload="ChangeBackground()">
+<body>
 <aside>
+<header>
 <h1>TSCHIKA WORM AVACADO!</h1>
+</header>
 <h2>the chickeny-iest version of paper scissors rock</h2>
 <h3>Why the name? Well, chickens eat worms, and worms eat avacados, but avacados are poisonous to chickens.
-<br>Chicken beats worm, worm beats avacado, and avacado beats chicken
+<br>Chicken beats worm, worm beats avacado, and avacado beats chicken</br>
 </h3>
 </aside>
 <main>
-<section id="vssection">
 <p id="scorecounter">Winstreak: 0</p>
-<img id="P1" src="docs/assets/error message.png">
-<img id="P2" src="docs/assets/error message.png">
+<section id="vssection">
+<div class="imgDisplayBackground">
+<img class="imgDisplays" id="player1">
+</div>
+<div id="matrixTextBackground" class="imgDisplayBackground">
+<img class="imgDisplays" id="player2">
+</div>
 </section>
-<button class="choosebutton" type="button" onclick="document.getElementById('P1').src='docs/assets/tschika p1.png'">Choose Tschika?</button>
-<button class="choosebutton" type="button" onclick="document.getElementById('P1').src='docs/assets/worm p1.png'">Choose Worm?</button>
-<button class="choosebutton" type="button" onclick="document.getElementById('P1').src='docs/assets/avacado dragon p1.png'">Choose Avacado?</button>
+<br>
+<button class="choosebutton">Choose Tschika?</button>
+<button class="choosebutton">Choose Worm?</button>
+<button class="choosebutton">Choose Avacado?</button>
 <br>
 <div id="startbuttonwrapper">
-<button id="startbutton" type="button" onclick="Bot(), score()">
+<button id="startbutton">
 Start?</button>
-<script src="main.js"></script>
+<script src="tschikawormavacado.js"></script>
 </div>
 </main>
 </body>
