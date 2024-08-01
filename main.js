@@ -1,87 +1,70 @@
-// changing the background
-function ChangeBackground() {
-    const bgImages = [
-        "docs/assets/turtle head and worm body soup.png",
-    ];
-    const randomBgImage = Math.floor(Math.random() * bgImages.length);
-    const selectedBgImage = bgImages[randomBgImage];
-    document.getElementById('body').style.selectedBgImage = "url('" + selectedBgImage + "')";
-};
-// making the P2 randomly choose something //
-function Bot() {
+const gameResult = document.querySelector('#gameresult');
+const player1Image = document.querySelector('#player1');
+const player2Image = document.querySelector('#player2');
+const scoreCount = document.querySelector('#scorecounter');
+const botBackground = document.querySelector('#matrixTextBackground');
+const matrixText = document.querySelectorAll('.matrixText');
+const characters = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890';
+const chooseButtons = document.querySelectorAll('.choosebutton');
+let winstreak = 0;
+chooseButtons[0].addEventListener('click', () => player1Image.src = "docs/assets/tschika\ p1.png");
+chooseButtons[1].addEventListener('click', () => player1Image.src = "docs/assets/worm\ p1.png");
+chooseButtons[2].addEventListener('click', () => player1Image.src = "docs/assets/avacado\ dragon\ p1.png");
+document.querySelector('#startbutton').addEventListener('click', bot);
+//i didnt steal, i took inspiration off someone
+function setIntervalX(callback, delay, repetitions) {
+    let x = 0;
+    let intervalID = window.setInterval(function () {
+        callback();
+        if (++x === repetitions) {
+            window.clearInterval(intervalID);
+        }
+    }, delay);
+}
+setIntervalX(function () {
+    matrixTextMaker(Math.random());
+}, 50, 75);
+//making the player2 randomly choose something
+function bot(){
     const images = [
-        "docs/assets/tschika p2.png",
-        "docs/assets/worm p2.png",
-        "docs/assets/avacado dragon p2.png",
+        "docs/assets/tschika\ p2.png",
+        "docs/assets/worm\ p2.png",
+        "docs/assets/avacado\ dragon\ p2.png"
     ];
-    const randomImage = Math.floor(Math.random() * images.length);
-    const selectedImage = images[randomImage];
-    document.getElementById('P2').src = selectedImage;
-};
-//making the score up and down and also the outcomes when game start and stuff //
-function score() {
-    let n = 0;
-    let message = document.createElement('p');
-    message.setAttribute('id', 'msg');
-    // check if P1 is tschika and it's outcomes //
-    if (document.getElementById('P1').src == "docs/assets/tschika p1.png") {
-        if (document.getElementById('P2').src == "docs/assets/worm p2.png") {
-            let n = n+1;
-            document.getElementById('msg').innerHTML('Tschika is victorious!!!');
-            document.getElementById('scorecounter').innerHTML('Score:' + n.toString());
-        } else if (document.getElementById('P2').src == "docs/assets/avacado dragon p2.png") {
-            let n = n-1;
-            document.getElementById('msg').innerHTML('NOOOO! LITTOO TSCHIKA HAD A FAMILY TOO FEED!');
-            document.getElementById('scorecounter').innerHTML('Score:' + n.toString());
-        } else {
-            document.getElementById('msg').innerHTML('You drawed. Is it a 2 of clubs?');
-            document.getElementById('scorecounter').innerHTML('Score:' + n.toString());
-        }
-    }
-    // check if P1 is worm //
-    else if (document.getElementById('P1').src == "docs/assets/worm p1.png") {
-        if (document.getElementById('P2').src == "docs/assets/avacado dragon p2.png") {
-            let n = n+1;
-            document.getElementById('msg').innerHTML('Worm is victorious!!!');
-            document.getElementById('scorecounter').innerHTML('Score:' + n.toString());
-        } else if (document.getElementById('P2').src == "docs/assets/tschika p2.png") {
-            let n = n-1;
-            document.getElementById('msg').innerHTML('You hear voices- "Hayoo everyone! Today we\'ll be cooking... Traditional chickenese spaghetti served with worm noodles!"');
-            document.getElementById('scorecounter').innerHTML('Score:' + n.toString());
-        } else {
-            let n = n;
-            document.getElementById('msg').innerHTML('Both of us worms have been living in and under rocks');
-            document.getElementById('scorecounter').innerHTML('Score:' + n.toString());
-        }
-    }
-    //check if P1 is avacado dragon //
-    else if (document.getElementById('P1').src == "docs/assets/avacado dragon p1.png") {
-        if (document.getElementById('P2').src == "docs/assets/tschika p2.png") {
-            let n = n+1;
-            document.getElementById('msg').innerHTML('Avacado is victorious!!!');
-            document.getElementById('scorecounter').innerHTML('Score:' + n.toString());
-        } else if (document.getElementById('P2').src == "docs/assets/worm p2.png") {
-            let n = n-1;
-            document.getElementById('msg').innerHTML('I wonder if worms are herbivores or omnivores... I also wonder if I\'m meat or vegetable... I wondeer if- *Silence- the worm has eaten the avacado\'s mouth off. It was made of both meat and vegetables*');
-            document.getElementById('scorecounter').innerHTML('Score:' + n.toString());
-        } else {
-            let n = n;
-            document.getElementById('msg').innerHTML('"We\'re both supposed to be crocodiles, right?"- Avacado dragons');
-            document.getElementById('scorecounter').innerHTML('Score:' + n.toString());
-        }
-    }
-    else {
-        alert('CHOOSE A SOMETHING YOU IDIOT');
-        document.getElementsByClassName('choosebutton').style.border = "3px solid red";
-    }
-};
-function induceRageUnfairly() {
-    if (score > 10) {
-    Math.floor(math.random()*20)+1;
-    let msg = document.createElement('p');
-    let unluckyText = document.createTextNode('So, you have not lost 10 times with random chance huh? That has a 1 in 0.00001693508 chance of happening, so you probably cheated. Do you want to go to the moon?');
-    msg.appendChild(unluckyText);
-    document.getElementById('vssection').appendChild(msg);
-    document.getElementsById('body').style.display = 'none';
-};
-};
+    let randomImage = Math.floor(Math.random() * images.length);
+    let selectedImage = images[randomImage];
+    player2Image.src = selectedImage;
+    resultMessages();
+}
+const matrixTextMaker = right => {
+    const singleText = document.createElement('p');
+    singleText.style.right = 10+right*30+ 'vw';
+    singleText.setAttribute('class', 'matrixText');
+    botBackground.appendChild(singleText);
+    setInterval(() => {singleText.innerHTML = characters[Math.floor(Math.random()*characters.length)]}, 325);
+}
+//making the score up and down and also the outcomes when game start and stuff
+function resultMessages() {
+    const outcomes = {
+            "docs/assets/tschika\ p1.png" : {
+                "docs/assets/worm\ p2.png": {result: "win", winstreak: 1},
+                "docs/assets/avacado\ dragon\ p2.png": {result: "lose", winstreak: -1},
+                "docs/assets/tschika\ p1.png": {result: "draw", winstreak: 0}
+            },
+            "docs/assets/worm\ p2.png": {
+                "docs/assets/worm\ p2.png": {result: "draw", winstreak: 0},
+                "docs/assets/avacado\ dragon\ p2.png": {result: "win", winstreak: 1},
+                "docs/assets/tschika\ p2.png": {result: "lose", winstreak: -1}
+            },
+            "docs/assets/avacado\ dragon\ p2.png": {
+                "docs/assets/worm\ p2.png": {result: "lose", winstreak: -1},
+                "docs/assets/avacado\ dragon\ p2.png": {result: "draw", winstreak: 0},
+                "docs/assets/tschika\ p2.png": {result: "win", winstreak: 1}
+            }
+        };
+    let outcome = outcomes?.[player1Image.src]?.[player2Image.src] || "didnt work";
+    console.log(outcome);
+    scoreCount.innerHTML = outcome?.result;
+    winstreak += outcome?.winstreak;
+    scoreCount.innerHTML += ` Wins: ${winstreak}`;
+}
