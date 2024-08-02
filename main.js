@@ -46,20 +46,20 @@ const matrixTextMaker = right => {
 //making the score up and down and also the outcomes when game start and stuff
 function resultMessages() {
     const outcomes = {
-            "docs/assets/tschika\ p1.png" : {
-                "docs/assets/worm\ p2.png": {result: "win", winstreak: 1},
-                "docs/assets/avacado\ dragon\ p2.png": {result: "lose", winstreak: -1},
-                "docs/assets/tschika\ p1.png": {result: "draw", winstreak: 0}
+            "docs/assets/tschika p1.png" : {
+                "docs/assets/worm p2.png": {result: "win", winstreak: 1},
+                "docs/assets/avacado dragon p2.png": {result: "lose", winstreak: -1},
+                "docs/assets/tschika p1.png": {result: "draw", winstreak: 0}
             },
-            "docs/assets/worm\ p2.png": {
-                "docs/assets/worm\ p2.png": {result: "draw", winstreak: 0},
-                "docs/assets/avacado\ dragon\ p2.png": {result: "win", winstreak: 1},
-                "docs/assets/tschika\ p2.png": {result: "lose", winstreak: -1}
+            "docs/assets/worm p2.png": {
+                "docs/assets/worm p2.png": {result: "draw", winstreak: 0},
+                "docs/assets/avacado dragon p2.png": {result: "win", winstreak: 1},
+                "docs/assets/tschika p2.png": {result: "lose", winstreak: -1}
             },
-            "docs/assets/avacado\ dragon\ p2.png": {
-                "docs/assets/worm\ p2.png": {result: "lose", winstreak: -1},
-                "docs/assets/avacado\ dragon\ p2.png": {result: "draw", winstreak: 0},
-                "docs/assets/tschika\ p2.png": {result: "win", winstreak: 1}
+            "docs/assets/avacado dragon p2.png": {
+                "docs/assets/worm p2.png": {result: "lose", winstreak: -1},
+                "docs/assets/avacado dragon p2.png": {result: "draw", winstreak: 0},
+                "docs/assets/tschika p2.png": {result: "win", winstreak: 1}
             }
         };
     let outcome = outcomes?.[player1Image.src]?.[player2Image.src] || "didnt work";
