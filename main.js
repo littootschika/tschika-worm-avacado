@@ -51,12 +51,12 @@ function resultMessages() {
                 "docs/assets/avacado dragon p2.png": {result: "lose", winstreak: -1},
                 "docs/assets/tschika p1.png": {result: "draw", winstreak: 0}
             },
-            "docs/assets/worm p2.png": {
+            "docs/assets/worm p1.png": {
                 "docs/assets/worm p2.png": {result: "draw", winstreak: 0},
                 "docs/assets/avacado dragon p2.png": {result: "win", winstreak: 1},
                 "docs/assets/tschika p2.png": {result: "lose", winstreak: -1}
             },
-            "docs/assets/avacado dragon p2.png": {
+            "docs/assets/avacado dragon p1.png": {
                 "docs/assets/worm p2.png": {result: "lose", winstreak: -1},
                 "docs/assets/avacado dragon p2.png": {result: "draw", winstreak: 0},
                 "docs/assets/tschika p2.png": {result: "win", winstreak: 1}
