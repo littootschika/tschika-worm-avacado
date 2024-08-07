@@ -1,10 +1,11 @@
 const gameResult = document.querySelector('#gameresult');
 const player1Image = document.querySelector('#player1');
 const player2Image = document.querySelector('#player2');
-const scoreCount = document.querySelector('#scorecounter');
+const resultCount = document.querySelector('#resultCounter');
+const scoreCount = document.querySelector('#scoreCounter');
 const botBackground = document.querySelector('#matrixTextBackground');
 const matrixText = document.querySelectorAll('.matrixText');
-const characters = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890БбГгДдЁёЖжЗзИиЙйЛлПпФфЦцЧчШшЩщЪъЫыЭэЮюѲѢ';
+const characters = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890';
 const chooseButtons = document.querySelectorAll('.choosebutton');
 let winstreak = 0;
 chooseButtons[0].addEventListener('click', () => player1Image.src = "docs/assets/tschika\ p1.png");
@@ -23,7 +24,7 @@ function setIntervalX(callback, delay, repetitions) {
 }
 setIntervalX(function () {
     matrixTextMaker(Math.random());
-}, 50, 75);
+}, 50, 50);
 //making the player2 randomly choose something
 function bot(){
     const images = [
@@ -34,7 +35,15 @@ function bot(){
     let randomImage = Math.floor(Math.random() * images.length);
     let selectedImage = images[randomImage];
     player2Image.src = selectedImage;
-    resultMessages();
+    if (player1Image.src.includes('docs/assets/')){
+        resultMessages();
+    } else {
+        alert("You have to choose something, idiot. \n also, this is the Most you will get by selecting nothing and trying to play...\n but have you thought of what the LEAST was? (it won\'t benifit you, so don\'t try)");
+        let SecretChance1 = Math.floor(Math.random()*69);
+        if (SecretChance1 == 69){
+            alert('this is the LEAST you could\'ve gotten from not choosing anythign and trying to play. Congradulations for finding this secret. The chance of you gettingt this is one in 69');
+        }
+    }
 }
 const matrixTextMaker = right => {
     const singleText = document.createElement('p');
@@ -46,25 +55,27 @@ const matrixTextMaker = right => {
 //making the score up and down and also the outcomes when game start and stuff
 function resultMessages() {
     const outcomes = {
-            "docs/assets/tschika\ p1.png" : {
-                "docs/assets/worm\ p2.png": {result: "win", winstreak: 1},
-                "docs/assets/avacado\ dragon\ p2.png": {result: "lose", winstreak: -1},
-                "docs/assets/tschika\ p2.png": {result: "draw", winstreak: 0}
+            "https://littootschika.github.io/tschika-worm-avacado/docs/assets/tschika%20p1.png"  : {
+                "https://littootschika.github.io/tschika-worm-avacado/docs/assets/worm%20p2.png" : {result: "win", winstreak: 1},
+                "https://littootschika.github.io/tschika-worm-avacado/docs/assets/avacado%20dragon%20p2.png": {result: "lose", winstreak: -1},
+                "https://littootschika.github.io/tschika-worm-avacado/docs/assets/tschika%20p2.png" : {result: "draw", winstreak: 0}
             },
-            "docs/assets/worm\ p1.png": {
-                "docs/assets/worm\ p2.png": {result: "draw", winstreak: 0},
-                "docs/assets/avacado\ dragon\ p2.png": {result: "win", winstreak: 1},
-                "docs/assets/tschika\ p2.png": {result: "lose", winstreak: -1}
+            "https://littootschika.github.io/tschika-worm-avacado/docs/assets/worm%20p1.png" : {
+                "https://littootschika.github.io/tschika-worm-avacado/docs/assets/worm%20p2.png" : {result: "draw", winstreak: 0},
+                "https://littootschika.github.io/tschika-worm-avacado/docs/assets/avacado%20dragon%20p2.png" : {result: "win", winstreak: 1},
+                "https://littootschika.github.io/tschika-worm-avacado/docs/assets/tschika%20p2.png" : {result: "lose", winstreak: -1}
             },
-            "docs/assets/avacado\ dragon\ p1.png": {
-                "docs/assets/worm\ p2.png": {result: "lose", winstreak: -1},
-                "docs/assets/avacado\ dragon\ p2.png": {result: "draw", winstreak: 0},
-                "docs/assets/tschika\ p2.png": {result: "win", winstreak: 1}
+            "https://littootschika.github.io/tschika-worm-avacado/docs/assets/avacado%20dragon%20p1.png" : {
+                "https://littootschika.github.io/tschika-worm-avacado/docs/assets/worm%20p2.png" : {result: "lose", winstreak: -1},
+                "https://littootschika.github.io/tschika-worm-avacado/docs/assets/avacado%20dragon%20p2.png" : {result: "draw", winstreak: 0},
+                "https://littootschika.github.io/tschika-worm-avacado/docs/assets/tschika%20p2.png" : {result: "win", winstreak: 1}
+            },
+            "null":{
+                "null" : {result: "something is wrong", winstreak: -69}
             }
         };
     let outcome = outcomes?.[player1Image.src]?.[player2Image.src] || "didnt work";
-    console.log(outcome);
-    scoreCount.innerHTML = outcome?.result;
+    resultCount.innerHTML = outcome?.result;
     winstreak += outcome?.winstreak;
-    scoreCount.innerHTML += ` Wins: ${winstreak}`;
+    scoreCount.innerHTML = `Amount of wins: ${winstreak}`;
 }
