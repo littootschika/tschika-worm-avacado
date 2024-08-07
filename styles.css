@@ -5,35 +5,46 @@ html{
     --matrixBackgroundWidth: 30vw;
 }
 body {
+    height: 100%;
     text-align: center;
+    background: url(docs/assets/background.png);
+    background-repeat: repeat;
+    background-size: 3% 9%;
 }
 h1 {
-    font-size: 36;
+    font-size: 3vh;
+}
+h2 {
+    font-size: 3vh;
+}
+h3 {
+    font-size: 2vh;
+}
+p {
+    margin: 0.5vh;
 }
 #startbuttonwrapper {
     background: linear-gradient(135deg, rgba(171, 12, 0, 50), rgb(255, 126, 0), rgb(255, 222, 0), rgb(149, 246, 255), rgba(255, 11, 76, 0.625));
     background-size: 400% 400%;
     animation: movingbackgroundforstart 5s ease infinite;
-    width: 100px;
+    width: 7vw;
     border-radius: 5px;
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
     margin: auto;
 }
 #startbutton {
-    padding: 5px;
-    border-radius: 5px;
-    border: 0px solid transparent;
+    border: transparent;
     font-family: 'Playpen Sans', cursive;
-    font-size: 20px;
+    font-size: 3vh;
     text-align: center;
     background: transparent;
 }
 .choosebutton {
+    font-size: 2.5vh;
     margin: 2.5vh;
     height: 5vh;
     width: 15vw;
-    font-size: 95%;
     background: linear-gradient(150deg,rgb(171, 12, 0), rgb(255, 126, 0), rgb(255, 222, 0), rgb(0, 200, 0), rgb(0, 0, 200), rgb(159,78, 220), rgb(255, 0, 255));
     background-size: 800%;
     animation: rgb 10s linear infinite;
@@ -61,6 +72,8 @@ h1 {
     background-color: #000;
     border: 3px solid #0c7e0c;
     overflow: hidden;
+    display: flex;
+    flex-direction: row;
 }
 .matrixText{
     z-index: 1000;
@@ -70,11 +83,10 @@ h1 {
     margin: 0px;
     font-size: 2em;
     animation: greenSwap 2.5s linear infinite;
-    top: 40vh;
 }
 /*keyframe*/
 @keyframes greenSwap{
-    0%{text-shadow: 1px 1px 0em #00400a; color: #4fe366; top: calc(0.85*var(--matrixBackgroundHeight));}
+    0%{text-shadow: 1px 1px 0em #00400a; color: #4fe366; transform: translateY(1px);}
     10%{text-shadow: 1px 1px white, 2px 2px 4px white, -2px -2px 4px white, 4px 4px 16px white, -4px -4px 16px white}
     25%{text-shadow: 0.5em 0.5em 2em #4fe366; color: #00ff00;}
     30%{text-shadow: 1px 1px white, 2px 2px 4px white, -2px -2px 4px white, 4px 4px 16px white, -4px -4px 16px white}
@@ -82,7 +94,7 @@ h1 {
     50%{text-shadow: 1px 1px white, 2px 2px 4px white, -2px -2px 4px white, 4px 4px 16px white, -4px -4px 16px white}
     65%{text-shadow: 0.5em 0.5em 2em #008a15; color: #0f0;}
     70%{text-shadow: 1px 1px white, 2px 2px 4px white, -2px -2px 4px white, 4px 4px 16px white, -4px -4px 16px white}
-    95%{text-shadow: 0.5em 0.5em 2em #002400; color: #000; top: calc(1.8*var(--matrixBackgroundHeight));}
+    95%{text-shadow: 0.5em 0.5em 2em #002400; color: #000; transform: translateY(var(--matrixBackgroundHeight));}
 }
 @keyframes movingbackgroundforstart {
     0% {background-position: 30% 100%;}
