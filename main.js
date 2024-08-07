@@ -4,7 +4,7 @@ const player2Image = document.querySelector('#player2');
 const scoreCount = document.querySelector('#scorecounter');
 const botBackground = document.querySelector('#matrixTextBackground');
 const matrixText = document.querySelectorAll('.matrixText');
-const characters = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890';
+const characters = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890БбГгДдЁёЖжЗзИиЙйЛлПпФфЦцЧчШшЩщЪъЫыЭэЮюѲѢ';
 const chooseButtons = document.querySelectorAll('.choosebutton');
 let winstreak = 0;
 chooseButtons[0].addEventListener('click', () => player1Image.src = "docs/assets/tschika\ p1.png");
